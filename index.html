@@ -4,7 +4,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>GÄELLE</title>
-  <meta name="description" content="GÄELLE — Montreal pop & R&B artist. Official website: music, videos, shows and contact."/>
+  <meta name="description" content="GÄELLE — Montreal pop & R&B artist. Official website: music, videos, shop, shows and contact."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet"/>
@@ -457,6 +457,9 @@
     .merch-card:hover .merch-img-wrap .front { opacity: 0; transform: scale(1.03); }
     .merch-card:hover .merch-img-wrap .back  { opacity: 1; transform: scale(1.03); }
     .merch-img-wrap.bg-amber { background: var(--bg); }
+    /* Shopify product photos: fill the frame, no padding */
+    .merch-img-wrap.photo { background: var(--cream); }
+    .merch-img-wrap.photo img { object-fit: cover; padding: 0; }
 
     .merch-name {
       font-family: var(--serif);
@@ -507,6 +510,15 @@
       align-items: center;
       gap: 24px;
       padding: 20px 0;
+      border-bottom: 1px solid var(--ink-20);
+    }
+    .shows-note {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: clamp(1.2rem, 2vw, 1.6rem);
+      color: var(--ink);
+      opacity: 0.75;
+      padding: 8px 0 28px;
       border-bottom: 1px solid var(--ink-20);
     }
     .show-date {
@@ -667,6 +679,7 @@
     <div class="nav-links">
       <a href="#bio" data-i18n="nav_about">About</a>
       <a href="#music" data-i18n="nav_music">Music</a>
+      <a href="#merch" data-i18n="nav_shop">Shop</a>
       <a href="#shows" data-i18n="nav_shows">Shows</a>
       <a href="#contact" data-i18n="nav_contact">Contact</a>
     </div>
@@ -838,50 +851,81 @@
           <div class="vid-veil"><div class="vid-play"></div></div>
           <span class="vid-caption" data-i18n="vid_caption">Watch on Instagram</span>
         </a>
+        <a class="vid-card" href="https://www.instagram.com/p/DYhr1FZRtgs/" target="_blank" rel="noopener">
+          <img src="vid-thumb1.jpg" alt="Gäelle Reel" />
+          <div class="vid-veil"><div class="vid-play"></div></div>
+          <span class="vid-caption" data-i18n="vid_caption">Watch on Instagram</span>
+        </a>
+        <a class="vid-card" href="https://www.instagram.com/p/DVbjoP6kQuf/" target="_blank" rel="noopener">
+          <img src="vid-thumb2.jpg" alt="Gäelle Reel" />
+          <div class="vid-veil"><div class="vid-play"></div></div>
+          <span class="vid-caption" data-i18n="vid_caption">Watch on Instagram</span>
+        </a>
+        <a class="vid-card" href="https://www.instagram.com/p/DY5hET0xcWs/" target="_blank" rel="noopener">
+          <img src="vid-thumb3.jpg" alt="Gäelle Reel" />
+          <div class="vid-veil"><div class="vid-play"></div></div>
+          <span class="vid-caption" data-i18n="vid_caption">Watch on Instagram</span>
+        </a>
+        <a class="vid-card" href="https://www.instagram.com/p/DZgMFCXx1vZ/" target="_blank" rel="noopener">
+          <img src="vid-thumb4.jpg" alt="Gäelle Reel" />
+          <div class="vid-veil"><div class="vid-play"></div></div>
+          <span class="vid-caption" data-i18n="vid_caption">Watch on Instagram</span>
+        </a>
+        <a class="vid-card" href="https://www.instagram.com/p/DZ5QDXERIJN/" target="_blank" rel="noopener">
+          <img src="vid-thumb5.jpg" alt="Gäelle Reel" />
+          <div class="vid-veil"><div class="vid-play"></div></div>
+          <span class="vid-caption" data-i18n="vid_caption">Watch on Instagram</span>
+        </a>
+        <a class="vid-card" href="https://www.instagram.com/p/DZI_10hxM06/" target="_blank" rel="noopener">
+          <img src="vid-thumb6.jpg" alt="Gäelle Reel" />
+          <div class="vid-veil"><div class="vid-play"></div></div>
+          <span class="vid-caption" data-i18n="vid_caption">Watch on Instagram</span>
+        </a>
       </div>
 
     </div>
   </section>
 
 
+  <!-- SHOP — products live on the Shopify store (9q00gs-gm.myshopify.com), fulfilled via Tapstitch.
+       To change a product: update its link, the two image links, the size line and the price below (and in the translations). -->
+  <section id="merch">
+    <div class="wrap">
+      <span class="sec-label" data-i18n="sec_shop">Shop</span>
+      <span class="merch-sub" data-i18n="merch_sub">Sensitive Baddie Collection</span>
+      <div class="merch-grid">
+
+        <a class="merch-card" href="https://9q00gs-gm.myshopify.com/products/sensitive-baddie-baby-tee-official" target="_blank" rel="noopener">
+          <div class="merch-img-wrap photo">
+            <img class="front" src="https://cdn.shopify.com/s/files/1/0858/3171/2988/files/df50a055a1f14fc091c2df443281e778.png?v=1791208653&width=900" alt="Sensitive Baddie Baby Tee (Official)" loading="lazy" />
+            <img class="back"  src="https://cdn.shopify.com/s/files/1/0858/3171/2988/files/4cc4da140b894b4a98cfe6f033300f0f.png?v=1791208654&width=900" alt="Sensitive Baddie Baby Tee (Official) — second view" loading="lazy" />
+          </div>
+          <div class="merch-name">Sensitive Baddie Baby Tee (Official)</div>
+          <div class="merch-hint" data-i18n="merch_hint1">White · Sizes S–XL</div>
+          <div class="merch-price" data-i18n="merch_price1">$39.50 CAD</div>
+          <span class="merch-btn" data-i18n="merch_btn">Shop Now</span>
+        </a>
+
+        <a class="merch-card" href="https://9q00gs-gm.myshopify.com/products/sensitive-baddie-baby-tee" target="_blank" rel="noopener">
+          <div class="merch-img-wrap photo">
+            <img class="front" src="https://cdn.shopify.com/s/files/1/0858/3171/2988/files/7a5d7918a2f44f2da3b74eb1d1d59791.png?v=1791208534&width=900" alt="Sensitive Baddie Baby Tee" loading="lazy" />
+            <img class="back"  src="https://cdn.shopify.com/s/files/1/0858/3171/2988/files/0df5e0f43a3b43d7a8c60a5f233d5b63.png?v=1791208534&width=900" alt="Sensitive Baddie Baby Tee — second view" loading="lazy" />
+          </div>
+          <div class="merch-name">Sensitive Baddie Baby Tee</div>
+          <div class="merch-hint" data-i18n="merch_hint2">White · Sizes S–3XL</div>
+          <div class="merch-price" data-i18n="merch_price2">$28.06 CAD</div>
+          <span class="merch-btn" data-i18n="merch_btn">Shop Now</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
   <!-- SHOWS -->
   <section id="shows">
     <div class="wrap">
       <span class="sec-label" data-i18n="sec_shows">Shows</span>
-      <div>
-        <div class="show-row">
-          <span class="show-date" data-i18n="show1_date">June 28, 2026</span>
-          <div>
-            <div class="show-name" data-i18n="show1_name">International Jazz Festival</div>
-            <div class="show-location" data-i18n="loc_mtl">Montreal, Canada</div>
-          </div>
-          <a href="#" class="show-ticket" data-i18n="tickets">Tickets</a>
-        </div>
-        <div class="show-row">
-          <span class="show-date" data-i18n="show2_date">July 10, 2026</span>
-          <div>
-            <div class="show-name">PlazaPalooza Festival</div>
-            <div class="show-location" data-i18n="loc_mtl">Montreal, Canada</div>
-          </div>
-          <a href="#" class="show-ticket" data-i18n="tickets">Tickets</a>
-        </div>
-        <div class="show-row">
-          <span class="show-date" data-i18n="show3_date">July 15, 2026</span>
-          <div>
-            <div class="show-name">Sous l'Anneau</div>
-            <div class="show-location" data-i18n="loc_mtl">Montreal, Canada</div>
-          </div>
-          <a href="#" class="show-ticket" data-i18n="tickets">Tickets</a>
-        </div>
-        <div class="show-row">
-          <span class="show-date" data-i18n="show4_date">Sept 18, 2026</span>
-          <div>
-            <div class="show-name">Aire Commune</div>
-            <div class="show-location">Ottawa, Canada</div>
-          </div>
-          <a href="#" class="show-ticket" data-i18n="tickets">Tickets</a>
-        </div>
-      </div>
+      <p class="shows-note" data-i18n="shows_note">More shows upcoming. Stay tuned, announcement soon.</p>
     </div>
   </section>
 
@@ -945,19 +989,19 @@
         bio_1: 'GÄELLE is a Montreal-based pop and R&amp;B artist defined by a strong and sensitive identity where vulnerability and empowerment intertwine. Her universe is built on intimate songwriting and a bold sonic aesthetic, carried by a powerful voice with an exceptional <strong>three-octave range</strong> — influenced by Ariana Grande, Beyoncé, and SZA — establishing her presence on the North American underground scene.',
         bio_2: 'With rapid growth across social media, she is attracting an ever-growing audience well beyond Canada. After two singles released this year, she is currently preparing her second EP titled <strong>Sensitive Baddies</strong>, expected at the end of the summer.',
         videos_label: 'Videos & Reels', vid_caption: 'Watch on Instagram',
-        merch_sub: 'Sensitive Baddie Collection — 2025',
-        merch_white: 'Sensitive Baddie Tee — White', merch_pink: 'Sensitive Baddie Tee — Blossom',
-        merch_hint: 'Baby tee in all sizes for sensitive baddies only',
-        merch_price: '$25.00', merch_btn: 'Shop Now',
+        merch_sub: 'Sensitive Baddie Collection',
+        merch_hint1: 'White · Sizes S–XL', merch_price1: '$39.50 CAD',
+        merch_hint2: 'White · Sizes S–3XL', merch_price2: '$28.06 CAD',
+        merch_btn: 'Shop Now',
         show1_date: 'June 28, 2026', show2_date: 'July 10, 2026', show3_date: 'July 15, 2026', show4_date: 'Sept 18, 2026',
-        show1_name: 'International Jazz Festival', presave_label: 'Pre-Save · Out Soon',
+        show1_name: 'International Jazz Festival', shows_note: 'More shows upcoming. Stay tuned, announcement soon.', presave_label: 'Pre-Save · Out Soon',
         loc_mtl: 'Montreal, Canada', tickets: 'Tickets',
         c_sublabel: 'Bookings, Press & Partnerships',
         c_desc: 'For bookings, press inquiries, brand collaborations, and sync licensing — reach out directly.',
         c_follow: 'Follow Gäelle',
         footer_rights: '© 2026 GÄELLE. All rights reserved.',
         footer_loc: 'Montreal, Canada · gaelleartist@gmail.com',
-        meta_desc: 'GÄELLE — Montreal pop & R&B artist. Official website: music, videos, shows and contact.'
+        meta_desc: 'GÄELLE — Montreal pop & R&B artist. Official website: music, videos, shop, shows and contact.'
       },
       fr: {
         nav_about: 'À propos', nav_music: 'Musique', nav_shop: 'Boutique', nav_shows: 'Spectacles', nav_contact: 'Contact',
@@ -966,19 +1010,19 @@
         bio_1: 'GÄELLE est une artiste pop et R&amp;B basée à Montréal, portée par une identité forte et sensible où vulnérabilité et affirmation de soi s’entremêlent. Son univers repose sur une écriture intime et une esthétique sonore audacieuse, porté par une voix puissante à la <strong>tessiture exceptionnelle de trois octaves</strong> — influencée par Ariana Grande, Beyoncé et SZA — qui affirme sa présence sur la scène underground nord-américaine.',
         bio_2: 'Grâce à une croissance rapide sur les réseaux sociaux, elle rejoint un public de plus en plus large, bien au-delà du Canada. Après deux singles parus cette année, elle prépare actuellement son deuxième EP, intitulé <strong>Sensitive Baddies</strong>, attendu à la fin de l’été.',
         videos_label: 'Vidéos & Reels', vid_caption: 'Voir sur Instagram',
-        merch_sub: 'Collection Sensitive Baddie — 2025',
-        merch_white: 'T-shirt Sensitive Baddie — Blanc', merch_pink: 'T-shirt Sensitive Baddie — Blossom',
-        merch_hint: 'Baby tee toutes tailles, pour sensitive baddies seulement',
-        merch_price: '25,00 $', merch_btn: 'Acheter',
+        merch_sub: 'Collection Sensitive Baddie',
+        merch_hint1: 'Blanc · Tailles S–XL', merch_price1: '39,50 $ CA',
+        merch_hint2: 'Blanc · Tailles S–3XL', merch_price2: '28,06 $ CA',
+        merch_btn: 'Acheter',
         show1_date: '28 juin 2026', show2_date: '10 juillet 2026', show3_date: '15 juillet 2026', show4_date: '18 sept. 2026',
-        show1_name: 'Festival International de Jazz', presave_label: 'Pré-sauvegarde · Bientôt',
+        show1_name: 'Festival International de Jazz', shows_note: 'D’autres spectacles à venir. Restez à l’affût, annonce bientôt.', presave_label: 'Pré-sauvegarde · Bientôt',
         loc_mtl: 'Montréal, Canada', tickets: 'Billets',
         c_sublabel: 'Booking, presse et partenariats',
         c_desc: 'Pour le booking, les demandes de presse, les collaborations de marque et la synchronisation — écrivez-nous directement.',
         c_follow: 'Suivre Gäelle',
         footer_rights: '© 2026 GÄELLE. Tous droits réservés.',
         footer_loc: 'Montréal, Canada · gaelleartist@gmail.com',
-        meta_desc: 'GÄELLE — Artiste pop et R&B de Montréal. Site officiel : musique, vidéos, spectacles et contact.'
+        meta_desc: 'GÄELLE — Artiste pop et R&B de Montréal. Site officiel : musique, vidéos, boutique, spectacles et contact.'
       }
     };
 
