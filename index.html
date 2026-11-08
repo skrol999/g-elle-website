@@ -101,6 +101,14 @@
     }
     .nav-socials a:hover { opacity: 1; }
 
+    /* Over the dark cover photo: light menu text */
+    #nav:not(.solid) .nav-links a,
+    #nav:not(.solid) .nav-socials a { color: var(--cream); opacity: 0.85; }
+    #nav:not(.solid) .lang-toggle { border-color: rgba(248,244,255,0.45); }
+    #nav:not(.solid) .lang-toggle button { color: var(--cream); }
+    #nav:not(.solid) .lang-toggle button.active { background: var(--cream); color: var(--ink); }
+    #nav:not(.solid) .nav-logo img { filter: brightness(1.9) saturate(0.9); }
+
     /* Language toggle */
     .lang-toggle {
       display: inline-flex;
@@ -143,7 +151,7 @@
       inset: 0;
       width: 100%; height: 100%;
       object-fit: cover;
-      object-position: 62% 22%;
+      object-position: 50% 26%;
       display: block;
     }
     .cover-fade {
@@ -714,7 +722,7 @@
 
   <!-- COVER -->
   <section id="cover">
-    <img class="cover-img" src="sb-cover.jpg" alt="Gäelle" />
+    <img class="cover-img" src="sb-cover-look.jpg" alt="Gäelle" />
     <div class="cover-fade"></div>
     <div class="cover-bottom">
       <span class="cover-ep-label" data-i18n="cover_label">Sensitive Baddie, the new EP. Out now</span>
@@ -737,7 +745,7 @@
           </p>
           <div class="bio-photos-left">
             <div class="bio-photo">
-              <img src="sb-look.jpg" alt="Gäelle" />
+              <img src="sb-cover.jpg" alt="Gäelle" style="object-position: 60% 20%;" />
             </div>
             <div class="bio-photo">
               <img src="sb-ep.jpg" alt="Gäelle" style="object-position: center 55%;" />
