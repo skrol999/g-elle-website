@@ -4,7 +4,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>GÄELLE</title>
-  <meta name="theme-color" content="#D6C6F6"/>
+  <meta name="theme-color" content="#BFA6EC"/>
   <meta name="description" content="GÄELLE — Montreal pop & R&B artist. New EP Sensitive Baddie out now. Music, videos, shop, shows and booking."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -15,9 +15,9 @@
 
     :root {
       /* Sensitive Baddie era — colours taken from the shoot backdrop */
-      --bg:      #D6C6F6;
-      --bg-lt:   #E4D9FB;
-      --bg-dk:   #BBA6EC;
+      --bg:      #BFA6EC;
+      --bg-lt:   #CDB8F2;
+      --bg-dk:   #A68ADD;
       --ink:     #1D1340;
       --ink-50:  rgba(29,19,64,0.5);
       --ink-20:  rgba(29,19,64,0.18);
@@ -27,7 +27,7 @@
       /* EP typography: Ballet (script), Higuen (serif), Blosta (labels).
          Marcellus and Italiana stand in for Higuen and Blosta until the font files are added. */
       --script:  'Ballet', cursive;
-      --serif:   'Higuen', 'Marcellus', Georgia, serif;
+      --serif:   'Blosta', 'Italiana', Georgia, serif;
       /* nav/labels only */
       --sans:    'Higuen', 'Marcellus', Georgia, serif;
       --label:   'Blosta', 'Italiana', 'Marcellus', serif;
@@ -215,6 +215,7 @@
       display: block;
       letter-spacing: 0;
       word-spacing: 0.25em;
+      text-align: center;
     }
     .divider { border: none; border-top: 1px solid var(--ink-20); }
 
@@ -232,24 +233,26 @@
       width: 100%; height: 100%;
       object-fit: cover;
       object-position: center 62%;
-      opacity: 0.32;
+      opacity: 0.62;
     }
     .bio-veil {
       position: absolute; inset: 0;
       z-index: -1;
-      background: linear-gradient(to bottom, var(--bg) 0%, rgba(214,198,246,0.35) 18%, rgba(214,198,246,0.35) 82%, var(--bg) 100%);
+      background: linear-gradient(to bottom, var(--bg) 0%, rgba(191,166,236,0.18) 16%, rgba(191,166,236,0.18) 84%, var(--bg) 100%);
     }
     .bio-center { text-align: center; }
     .bio-center .sec-label { margin-bottom: 28px; }
-    .bio-copy { max-width: 660px; margin: 0 auto; }
+    .bio-copy { max-width: 700px; margin: 0 auto; }
     .bio-text {
       font-family: var(--serif);
-      font-size: 1.12rem;
-      line-height: 1.9;
+      font-size: 1.32rem;
+      line-height: 1.85;
+      letter-spacing: 0.02em;
       color: var(--ink);
-      margin-bottom: 26px;
+      text-align: center;
+      margin-bottom: 30px;
     }
-    .bio-text strong { font-weight: 400; color: var(--accent); }
+    .bio-text strong { font-weight: 400; color: var(--ink); letter-spacing: 0.06em; text-transform: uppercase; font-size: 0.9em; }
     .bio-trio {
       display: grid;
       grid-template-columns: 1fr 1.15fr 1fr;
@@ -561,10 +564,26 @@
     }
     .contact-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
       align-items: start;
+      text-align: center;
     }
+    .c-block .c-email { font-size: clamp(0.95rem, 1.15vw, 1.1rem); white-space: nowrap; }
+    @media (max-width: 820px) { .c-block .c-email { white-space: normal; overflow-wrap: anywhere; } }
+    .c-block .c-desc { margin: 10px 0 22px; }
+    .c-follow { margin-top: 80px; text-align: center; }
+    .c-social-inline { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px 36px; margin-top: 6px; }
+    .c-social-inline a {
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--ink-20);
+      padding-bottom: 3px;
+      transition: color 0.25s, border-color 0.25s;
+    }
+    .c-social-inline a:hover { color: var(--accent); border-color: var(--accent); }
     .c-sublabel {
       font-family: var(--sans);
       font-size: 0.70rem;
@@ -647,7 +666,7 @@
       .cover-fade { height: 62%; background: linear-gradient(to bottom, transparent, var(--bg) 72%); }
       .wrap { padding: 0 20px; }
       #bio { padding: 80px 0 90px; }
-      .bio-text { font-size: 1.02rem; }
+      .bio-text { font-size: 1.12rem; text-align: center; }
       .bio-trio { grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 48px; }
       .bio-trio figure:nth-child(2) { grid-column: 1 / -1; grid-row: 1; aspect-ratio: 4/5; }
       .releases { grid-template-columns: 1fr 1fr; }
@@ -990,34 +1009,31 @@
     <div class="wrap">
       <span class="sec-label" data-i18n="sec_contact">Contact</span>
       <div class="contact-grid">
-        <div>
-          <span class="c-sublabel" data-i18n="c_booking">Booking</span>
-          <a href="mailto:Benjamin.Massicotte@spectramusique.com" class="c-email">benjamin.massicotte@spectramusique.com</a>
-          <p class="c-desc">Benjamin Massicotte, Spectra Musique</p>
-          <span class="c-sublabel" style="margin-top:44px" data-i18n="c_sublabel">Press &amp; Partnerships</span>
+        <div class="c-block">
+          <span class="c-sublabel" data-i18n="c_management">Management</span>
+          <a href="mailto:eliot@ninelivemusic.com" class="c-email">eliot@ninelivemusic.com</a>
+          <p class="c-desc">Eliot Schul, Nine Live Music</p>
+          <a href="mailto:foreign@theinhouseagency.net" class="c-email">foreign@theinhouseagency.net</a>
+          <p class="c-desc">Ralph Foreign</p>
+        </div>
+        <div class="c-block">
+          <span class="c-sublabel" data-i18n="c_sublabel">Press &amp; Partnerships</span>
           <a href="mailto:gaelleartist@gmail.com" class="c-email">gaelleartist@gmail.com</a>
           <p class="c-desc" data-i18n="c_desc">For press inquiries, brand collaborations and sync licensing, reach out directly.</p>
         </div>
-        <div>
-          <span class="c-sublabel" data-i18n="c_follow">Follow Gäelle</span>
-          <div class="c-social-list">
-            <a class="c-social-row" href="https://www.instagram.com/reallygaelle/" target="_blank" rel="noopener">
-              <span class="c-social-name">Instagram</span>
-              <span class="c-social-handle">@reallygaelle</span>
-            </a>
-            <a class="c-social-row" href="https://www.tiktok.com/@reallygaelle" target="_blank" rel="noopener">
-              <span class="c-social-name">TikTok</span>
-              <span class="c-social-handle">@reallygaelle</span>
-            </a>
-            <a class="c-social-row" href="https://open.spotify.com/artist/6aiaoT7eRRVYKgpYDB4s6T" target="_blank" rel="noopener">
-              <span class="c-social-name">Spotify</span>
-              <span class="c-social-handle">GÄELLE</span>
-            </a>
-            <a class="c-social-row" href="https://www.youtube.com/@reallygaelle" target="_blank" rel="noopener">
-              <span class="c-social-name">YouTube</span>
-              <span class="c-social-handle">@reallygaelle</span>
-            </a>
-          </div>
+        <div class="c-block">
+          <span class="c-sublabel" data-i18n="c_booking">Booking</span>
+          <a href="mailto:Benjamin.Massicotte@spectramusique.com" class="c-email">benjamin.massicotte@spectramusique.com</a>
+          <p class="c-desc">Benjamin Massicotte, Spectra Musique</p>
+        </div>
+      </div>
+      <div class="c-follow">
+        <span class="c-sublabel" data-i18n="c_follow">Follow Gäelle</span>
+        <div class="c-social-inline">
+          <a href="https://www.instagram.com/reallygaelle/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.tiktok.com/@reallygaelle" target="_blank" rel="noopener">TikTok</a>
+          <a href="https://open.spotify.com/artist/6aiaoT7eRRVYKgpYDB4s6T" target="_blank" rel="noopener">Spotify</a>
+          <a href="https://www.youtube.com/@reallygaelle" target="_blank" rel="noopener">YouTube</a>
         </div>
       </div>
     </div>
@@ -1057,7 +1073,7 @@
         hl0_date: 'Nov 3, 2026', hl0_loc: 'Listening party · Casameza Studios', hl1_date: 'Bell Centre', hl3_date: 'June 2026', hl3_name: 'Montreal International Jazz Festival',
         hl1_name: 'Opened for Aya Nakamura', hl2_name: 'SoundsGood Live', hl_watch: 'Watch', hl_soon: 'Footage coming soon',
         loc_mtl: 'Montreal, Canada', tickets: 'Tickets',
-        c_sublabel: 'Press & Partnerships', c_booking: 'Booking',
+        c_sublabel: 'Press & Partnerships', c_booking: 'Booking', c_management: 'Management',
         c_desc: 'For press inquiries, brand collaborations and sync licensing, reach out directly.',
         c_follow: 'Follow Gäelle',
         footer_rights: '© 2026 GÄELLE. All rights reserved.',
@@ -1081,7 +1097,7 @@
         hl0_date: '3 nov. 2026', hl0_loc: 'Soirée d’écoute · Casameza Studios', hl1_date: 'Centre Bell', hl3_date: 'Juin 2026', hl3_name: 'Festival International de Jazz de Montréal',
         hl1_name: 'Première partie d’Aya Nakamura', hl2_name: 'SoundsGood Live', hl_watch: 'Voir', hl_soon: 'Images à venir',
         loc_mtl: 'Montréal, Canada', tickets: 'Billets',
-        c_sublabel: 'Presse et partenariats', c_booking: 'Booking',
+        c_sublabel: 'Presse et partenariats', c_booking: 'Booking', c_management: 'Gérance',
         c_desc: 'Pour la presse, les collaborations de marque et la synchronisation, écrivez-nous directement.',
         c_follow: 'Suivre Gäelle',
         footer_rights: '© 2026 GÄELLE. Tous droits réservés.',
