@@ -8,8 +8,9 @@
   <meta name="description" content="GÄELLE — Montreal pop & R&B artist. New EP Sensitive Baddie out now. Music, videos, shop, shows and booking."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Italiana&family=Marcellus&display=swap" rel="stylesheet"/>
   <style>
+    em { font-style: normal; }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
@@ -23,9 +24,13 @@
       --cream:   #F8F4FF;
       --accent:  #B0136A;
       /* ALL body text: Cormorant for that girly editorial feel */
-      --serif:   'Cormorant Garamond', Georgia, serif;
+      /* EP typography: Ballet (script), Higuen (serif), Blosta (labels).
+         Marcellus and Italiana stand in for Higuen and Blosta until the font files are added. */
+      --script:  'Ballet', cursive;
+      --serif:   'Higuen', 'Marcellus', Georgia, serif;
       /* nav/labels only */
-      --sans:    'Jost', system-ui, sans-serif;
+      --sans:    'Higuen', 'Marcellus', Georgia, serif;
+      --label:   'Blosta', 'Italiana', 'Marcellus', serif;
     }
 
     html { scroll-behavior: smooth; }
@@ -92,7 +97,7 @@
     }
     .nav-socials a {
       font-family: var(--sans);
-      font-size: 0.65rem;
+      font-size: 0.70rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--ink);
@@ -111,7 +116,7 @@
     }
     .lang-toggle button {
       font-family: var(--sans);
-      font-size: 0.6rem;
+      font-size: 0.70rem;
       font-weight: 500;
       letter-spacing: 0.14em;
       text-transform: uppercase;
@@ -161,12 +166,23 @@
       gap: 18px;
       z-index: 2;
     }
+    /* large logo in the open space left of her face */
+    .cover-logo {
+      position: absolute;
+      z-index: 2;
+      left: 7vw;
+      top: 30%;
+      width: min(37vw, 600px);
+      height: auto;
+    }
+    #nav:not(.solid) .nav-logo img { opacity: 0; }
     .cover-ep-label {
-      font-family: var(--serif);
-      font-style: italic;
-      font-size: 1.15rem;
+      font-family: var(--label);
+      font-size: 1.35rem;
+      letter-spacing: 0.08em;
       color: var(--ink);
-      opacity: 0.8;
+      text-align: center;
+      padding: 0 20px;
     }
     .cover-btn {
       display: inline-block;
@@ -174,7 +190,7 @@
       background: var(--ink);
       color: var(--cream);
       font-family: var(--sans);
-      font-size: 0.62rem;
+      font-size: 0.70rem;
       font-weight: 500;
       letter-spacing: 0.25em;
       text-transform: uppercase;
@@ -186,101 +202,66 @@
     /* ══ SHARED ══ */
     .wrap { max-width: 1080px; margin: 0 auto; padding: 0 44px; }
 
-    /* Section headings — Cormorant italic, matching EP title style */
+    /* Section headings — Ballet script, from the EP artwork */
     .sec-label {
-      font-family: var(--serif);
-      font-style: italic;
-      font-weight: 300;
-      font-size: clamp(4.5rem, 12vw, 11rem);
+      font-family: var(--script);
+      font-style: normal;
+      font-weight: 400;
+      font-size: clamp(3.6rem, 8vw, 7.5rem);
       color: var(--ink);
-      opacity: 0.13;
-      line-height: 1;
+      opacity: 0.3;
+      line-height: 1.35;
       margin-bottom: 40px;
       display: block;
-      letter-spacing: -0.01em;
+      letter-spacing: 0;
+      word-spacing: 0.25em;
     }
     .divider { border: none; border-top: 1px solid var(--ink-20); }
 
-    /* ══ BIO ══ */
-    #bio { padding: 100px 0 0; }
-
-    .bio-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-      align-items: start;
+    /* ══ ABOUT ══ */
+    #bio {
+      position: relative;
+      padding: 110px 0 130px;
+      overflow: hidden;
+      isolation: isolate;
     }
-
-    /* Left: text + 2 photos stacked */
-    .bio-left { }
+    /* silhouette photo as a faint backdrop for the whole section */
+    .bio-bg {
+      position: absolute; inset: 0;
+      z-index: -2;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center 62%;
+      opacity: 0.32;
+    }
+    .bio-veil {
+      position: absolute; inset: 0;
+      z-index: -1;
+      background: linear-gradient(to bottom, var(--bg) 0%, rgba(214,198,246,0.35) 18%, rgba(214,198,246,0.35) 82%, var(--bg) 100%);
+    }
+    .bio-center { text-align: center; }
+    .bio-center .sec-label { margin-bottom: 28px; }
+    .bio-copy { max-width: 660px; margin: 0 auto; }
     .bio-text {
       font-family: var(--serif);
-      font-size: 1.15rem;
-      line-height: 1.85;
+      font-size: 1.12rem;
+      line-height: 1.9;
       color: var(--ink);
-      opacity: 0.82;
-      margin-bottom: 32px;
+      margin-bottom: 26px;
     }
-    .bio-text strong {
-      font-weight: 500;
-      font-style: italic;
-      opacity: 1;
-    }
-    .bio-photos-left {
+    .bio-text strong { font-weight: 400; color: var(--accent); }
+    .bio-trio {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
+      grid-template-columns: 1fr 1.15fr 1fr;
+      gap: 22px;
+      align-items: center;
+      max-width: 960px;
+      margin: 72px auto 0;
     }
-    .bio-photo {
-      overflow: hidden;
-      background: var(--bg-dk);
-    }
-    .bio-photo img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      object-position: center top;
-      display: block;
-      transition: transform 0.6s ease;
-      min-height: 260px;
-    }
-    .bio-photo:hover img { transform: scale(1.04); }
-
-    /* Right: single tall photo */
-    .bio-right {
-      position: sticky;
-      top: 80px;
-    }
-    .bio-photo-tall {
-      overflow: hidden;
-      background: var(--bg-dk);
-      height: 580px;
-    }
-    .bio-photo-tall img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      object-position: center top;
-      display: block;
-    }
-
-    /* Full-width faded background photo */
-    .bio-bg-photo {
-      margin-top: 64px;
-      position: relative;
-      height: 500px;
-      overflow: hidden;
-    }
-    .bio-bg-photo img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      object-position: 40% 60%;
-      display: block;
-      opacity: 0.6;
-    }
-    .bio-bg-photo-veil {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, var(--bg) 0%, transparent 25%, transparent 75%, var(--bg) 100%);
-    }
+    .bio-trio figure { margin: 0; overflow: hidden; aspect-ratio: 2/3; background: var(--bg-dk); }
+    .bio-trio figure:nth-child(2) { aspect-ratio: 3/4.4; }
+    .bio-trio img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.8s ease; }
+    .bio-trio figure:hover img { transform: scale(1.03); }
 
     /* ══ MUSIC ══ */
     #music {
@@ -334,17 +315,17 @@
     }
     .release-type {
       font-family: var(--sans);
-      font-size: 0.52rem;
+      font-size: 0.70rem;
       letter-spacing: 0.28em;
       text-transform: uppercase;
       color: var(--ink);
-      opacity: 0.4;
+      opacity: 0.65;
       margin-bottom: 4px;
       display: block;
     }
     .release-title {
       font-family: var(--serif);
-      font-style: italic;
+      font-style: normal;
       font-size: 1.1rem;
       color: var(--ink);
       line-height: 1.2;
@@ -352,19 +333,19 @@
     }
     .release-year {
       font-family: var(--sans);
-      font-size: 0.62rem;
+      font-size: 0.70rem;
       color: var(--ink);
-      opacity: 0.4;
+      opacity: 0.65;
     }
 
     /* Videos */
     .videos-label {
-      font-family: var(--sans);
-      font-size: 0.52rem;
-      letter-spacing: 0.28em;
+      font-family: var(--label);
+      font-size: 0.95rem;
+      letter-spacing: 0.24em;
       text-transform: uppercase;
       color: var(--ink);
-      opacity: 0.4;
+      opacity: 0.75;
       display: block;
       margin-bottom: 16px;
     }
@@ -416,7 +397,7 @@
       padding: 28px 12px 10px;
       background: linear-gradient(to top, rgba(59,26,8,0.65), transparent);
       font-family: var(--serif);
-      font-style: italic;
+      font-style: normal;
       font-size: 0.85rem;
       color: rgba(250,244,236,0.9);
     }
@@ -429,7 +410,7 @@
     .merch-sub {
       display: block;
       font-family: var(--serif);
-      font-style: italic;
+      font-style: normal;
       font-size: 1.1rem;
       color: var(--ink);
       opacity: 0.5;
@@ -473,16 +454,16 @@
     }
     .merch-hint {
       font-family: var(--sans);
-      font-size: 0.55rem;
+      font-size: 0.70rem;
       letter-spacing: 0.15em;
       color: var(--ink);
-      opacity: 0.35;
+      opacity: 0.65;
       margin-bottom: 6px;
       text-transform: uppercase;
     }
     .merch-price {
       font-family: var(--serif);
-      font-style: italic;
+      font-style: normal;
       font-size: 1rem;
       color: var(--ink);
       opacity: 0.6;
@@ -494,7 +475,7 @@
       background: var(--ink);
       color: var(--cream);
       font-family: var(--sans);
-      font-size: 0.58rem;
+      font-size: 0.70rem;
       font-weight: 500;
       letter-spacing: 0.2em;
       text-transform: uppercase;
@@ -520,7 +501,7 @@
       padding: 22px 0;
       border-bottom: 1px solid var(--ink-20);
       font-family: var(--serif);
-      font-style: italic;
+      font-style: normal;
       font-size: 1.05rem;
       color: var(--ink);
     }
@@ -528,7 +509,7 @@
     .shows-booking a:hover { color: var(--accent); border-color: var(--accent); }
     .shows-note {
       font-family: var(--serif);
-      font-style: italic;
+      font-style: normal;
       font-size: clamp(1.2rem, 2vw, 1.6rem);
       color: var(--ink);
       opacity: 0.75;
@@ -536,11 +517,11 @@
       border-bottom: 1px solid var(--ink-20);
     }
     .show-date {
-      font-family: var(--serif);
-      font-style: italic;
-      font-size: 1rem;
+      font-family: var(--label);
+      font-size: 1.1rem;
+      letter-spacing: 0.04em;
       color: var(--ink);
-      opacity: 0.5;
+      opacity: 0.75;
     }
     .show-name {
       font-family: var(--serif);
@@ -551,17 +532,17 @@
     }
     .show-location {
       font-family: var(--sans);
-      font-size: 0.65rem;
+      font-size: 0.70rem;
       letter-spacing: 0.08em;
       color: var(--ink);
-      opacity: 0.45;
+      opacity: 0.65;
     }
     .show-ticket {
       display: inline-block;
       padding: 9px 22px;
       border: 1px solid var(--ink-20);
       font-family: var(--sans);
-      font-size: 0.52rem;
+      font-size: 0.70rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--ink);
@@ -586,17 +567,17 @@
     }
     .c-sublabel {
       font-family: var(--sans);
-      font-size: 0.52rem;
+      font-size: 0.70rem;
       letter-spacing: 0.28em;
       text-transform: uppercase;
       color: var(--ink);
-      opacity: 0.38;
+      opacity: 0.65;
       display: block;
       margin-bottom: 10px;
     }
     .c-email {
       font-family: var(--serif);
-      font-style: italic;
+      font-style: normal;
       font-size: clamp(1.2rem, 2vw, 1.8rem);
       color: var(--ink);
       border-bottom: 1px solid var(--ink-20);
@@ -624,7 +605,7 @@
     .c-social-row:hover { opacity: 0.65; }
     .c-social-name {
       font-family: var(--sans);
-      font-size: 0.68rem;
+      font-size: 0.70rem;
       font-weight: 400;
       letter-spacing: 0.12em;
       text-transform: uppercase;
@@ -632,10 +613,10 @@
     }
     .c-social-handle {
       font-family: var(--serif);
-      font-style: italic;
+      font-style: normal;
       font-size: 0.95rem;
       color: var(--ink);
-      opacity: 0.4;
+      opacity: 0.65;
     }
 
     /* ══ FOOTER ══ */
@@ -648,10 +629,10 @@
     }
     footer p {
       font-family: var(--sans);
-      font-size: 0.5rem;
+      font-size: 0.70rem;
       letter-spacing: 0.12em;
       color: var(--ink);
-      opacity: 0.28;
+      opacity: 0.65;
     }
 
     /* ══ RESPONSIVE ══ */
@@ -659,14 +640,16 @@
       #nav { padding: 0 16px; height: 60px; }
       .nav-links { display: none; }
       .nav-socials { gap: 10px; }
-      .nav-socials a { font-size: 0.55rem; letter-spacing: 0.08em; }
+      .nav-socials a { font-size: 0.70rem; letter-spacing: 0.08em; }
       .nav-logo img { height: 50px; }
+      .cover-logo { left: 50%; top: auto; bottom: 175px; transform: translateX(-50%); width: 70vw; }
+      .cover-ep-label { font-size: 1.1rem; }
+      .cover-fade { height: 62%; background: linear-gradient(to bottom, transparent, var(--bg) 72%); }
       .wrap { padding: 0 20px; }
-      .bio-grid { grid-template-columns: 1fr; }
-      .bio-right { position: static; }
-      .bio-photo-tall { height: 340px; }
-      .bio-photos-left { grid-template-columns: 1fr; }
-      .bio-photo img { min-height: 220px; }
+      #bio { padding: 80px 0 90px; }
+      .bio-text { font-size: 1.02rem; }
+      .bio-trio { grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 48px; }
+      .bio-trio figure:nth-child(2) { grid-column: 1 / -1; grid-row: 1; aspect-ratio: 4/5; }
       .releases { grid-template-columns: 1fr 1fr; }
       .videos-grid { grid-template-columns: 1fr 1fr; }
       .merch-grid { grid-template-columns: 1fr; max-width: 420px; }
@@ -716,6 +699,7 @@
   <section id="cover">
     <img class="cover-img" src="sb-cover.jpg" alt="Gäelle" />
     <div class="cover-fade"></div>
+    <img class="cover-logo" src="logo-gaelle.png" alt="GÄELLE" />
     <div class="cover-bottom">
       <span class="cover-ep-label" data-i18n="cover_label">Sensitive Baddie, the new EP. Out now</span>
       <!-- TODO: replace with the direct Spotify link to the EP when available -->
@@ -723,37 +707,25 @@
     </div>
   </section>
 
-  <!-- BIO -->
+  <!-- ABOUT -->
   <section id="bio">
-    <div class="wrap">
+    <img class="bio-bg" src="sb-silhouette-bg.jpg" alt="" aria-hidden="true" />
+    <div class="bio-veil"></div>
+    <div class="wrap bio-center">
       <span class="sec-label" data-i18n="sec_about">About</span>
-      <div class="bio-grid">
-        <div class="bio-left">
+      <div class="bio-copy">
           <p class="bio-text" data-i18n-html="bio_1">
             GÄELLE is a Montreal-based pop and R&amp;B artist defined by a strong and sensitive identity where vulnerability and empowerment intertwine. Her universe is built on intimate songwriting and a bold sonic aesthetic, carried by a powerful voice with an exceptional <strong>three-octave range</strong> — influenced by Ariana Grande, Beyoncé, and SZA — establishing her presence on the North American underground scene.
           </p>
           <p class="bio-text" data-i18n-html="bio_2">
             With 200K monthly listeners, 167K Instagram followers and over 25M views across platforms, she is attracting an ever-growing audience well beyond Canada. Her new EP, <strong>Sensitive Baddie</strong>, is out now. Across eight tracks, GÄELLE tells one story, in order: love, heartbreak, sensuality, self-doubt, conflict, loneliness and self-love, and a return to where it all began.
           </p>
-          <div class="bio-photos-left">
-            <div class="bio-photo">
-              <img src="sb-look.jpg" alt="Gäelle" />
-            </div>
-            <div class="bio-photo">
-              <img src="sb-ep.jpg" alt="Gäelle" style="object-position: center 55%;" />
-            </div>
-          </div>
-        </div>
-        <div class="bio-right">
-          <div class="bio-photo-tall">
-            <img src="sb-blur.jpg" alt="Gäelle" style="object-position: center 45%;" />
-          </div>
-        </div>
       </div>
-    </div>
-    <div class="bio-bg-photo">
-      <img src="sb-strip.jpg" alt="" />
-      <div class="bio-bg-photo-veil"></div>
+      <div class="bio-trio">
+        <figure><img src="sb-look.jpg" alt="Gäelle" style="object-position: center 30%;" /></figure>
+        <figure><img src="sb-blur.jpg" alt="Gäelle" style="object-position: center 45%;" /></figure>
+        <figure><img src="sb-ep.jpg" alt="Gäelle" style="object-position: center 55%;" /></figure>
+      </div>
     </div>
   </section>
 
