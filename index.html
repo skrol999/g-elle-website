@@ -124,7 +124,6 @@
       color: var(--ink);
       border: none;
       padding: 6px 10px;
-      cursor: pointer;
       opacity: 0.55;
       transition: background 0.25s, color 0.25s, opacity 0.25s;
     }
@@ -446,7 +445,7 @@
       grid-template-columns: 1fr 1fr;
       gap: 24px;
     }
-    .merch-card { display: block; cursor: pointer; }
+    .merch-card { display: block; }
     .merch-img-wrap {
       position: relative;
       aspect-ratio: 1;
@@ -691,6 +690,13 @@
     @keyframes bf-sway { from { transform: translateX(-34px) rotate(-10deg); } to { transform: translateX(34px) rotate(10deg); } }
     @keyframes bf-flap { from { transform: scaleX(1); } to { transform: scaleX(0.35); } }
     @media (prefers-reduced-motion: reduce) { .bf-layer { display: none; } }
+
+
+    /* ══ BUTTERFLY CURSOR (mouse only) ══ */
+    @media (hover: hover) and (pointer: fine) {
+      html, body { cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='-32 -26 64 52'%3E%3Cg transform='rotate(-25)'%3E%3Cg fill='%232A1463' stroke='%23FBF8FF' stroke-width='2.4' stroke-linejoin='round'%3E%3Cpath d='M-1 -1 C -4 -12 -14 -21 -23 -19 C -30 -17 -28 -6 -19 -1 C -12 2 -6 1 -1 0 C -7 3 -17 7 -18 14 C -19 20 -11 21 -6 15 C -3 11 -1 5 -1 2 Z'/%3E%3Cpath d='M-1 -1 C -4 -12 -14 -21 -23 -19 C -30 -17 -28 -6 -19 -1 C -12 2 -6 1 -1 0 C -7 3 -17 7 -18 14 C -19 20 -11 21 -6 15 C -3 11 -1 5 -1 2 Z' transform='scale(-1,1)'/%3E%3C/g%3E%3Cpath d='M0 -7 L0 15' stroke='%23FBF8FF' stroke-width='5' stroke-linecap='round'/%3E%3Cpath d='M0 -7 L0 15' stroke='%232A1463' stroke-width='2.6' stroke-linecap='round'/%3E%3Cpath d='M0 -7 Q -3 -14 -7 -18 M0 -7 Q 3 -14 7 -18' stroke='%232A1463' stroke-width='1.6' fill='none'/%3E%3C/g%3E%3C/svg%3E") 14 8, auto; }
+      a, button, [role="button"], .merch-card, label { cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='-32 -26 64 52'%3E%3Cg transform='rotate(-25)'%3E%3Cg fill='%239C1A6B' stroke='%23FBF8FF' stroke-width='2.4' stroke-linejoin='round'%3E%3Cpath d='M-1 -1 C -4 -12 -14 -21 -23 -19 C -30 -17 -28 -6 -19 -1 C -12 2 -6 1 -1 0 C -7 3 -17 7 -18 14 C -19 20 -11 21 -6 15 C -3 11 -1 5 -1 2 Z'/%3E%3Cpath d='M-1 -1 C -4 -12 -14 -21 -23 -19 C -30 -17 -28 -6 -19 -1 C -12 2 -6 1 -1 0 C -7 3 -17 7 -18 14 C -19 20 -11 21 -6 15 C -3 11 -1 5 -1 2 Z' transform='scale(-1,1)'/%3E%3C/g%3E%3Cpath d='M0 -7 L0 15' stroke='%23FBF8FF' stroke-width='5' stroke-linecap='round'/%3E%3Cpath d='M0 -7 L0 15' stroke='%239C1A6B' stroke-width='2.6' stroke-linecap='round'/%3E%3Cpath d='M0 -7 Q -3 -14 -7 -18 M0 -7 Q 3 -14 7 -18' stroke='%239C1A6B' stroke-width='1.6' fill='none'/%3E%3C/g%3E%3C/svg%3E") 14 8, pointer; }
+    }
 
     /* ══ RESPONSIVE ══ */
     @media (max-width: 1240px) and (min-width: 821px) {
